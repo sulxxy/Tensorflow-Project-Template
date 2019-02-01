@@ -6,22 +6,21 @@ from tensorflow.python.training.optimizer import Optimizer
 
 
 class SuffixSGD(Optimizer):
-    """
-    Optimizer that implements the SuffixSGD algorithm
+    """Optimizer that implements the SuffixSGD algorithm
     See [E. Hazan et. al., 2016](https://arxiv.org/abs/1503.03712)
     """
 
     def __init__(self, lr, center, delta, sigma, use_locking=False, name='SuffixSGD'):
         """Construct a new SuffixSGD optimizer
 
-        Args:
-            lr: A Tensor. The learning rate.
-            center: A Tensor. The center of the decision set.
-            delta: A Tensor. The diameter of the decision set.
-            sigma: A Tensor or floating point value. The niceness of the loss function.
-            use_locking: If True use locks for update operation.
-            name: Optional name for the operations. Defaults to "SuffixSGD".
+        :param lr: A Tensor. The learning rate.
+        :param center: A Tensor. The center of the decision set.
+        :param delta: A Tensor. The diameter of the decision set.
+        :param sigma: A Tensor or floating point value. The niceness of the loss function.
+        :param use_locking: If True use locks for update operation.
+        :param name: Optional name for the operations. Defaults to "SuffixSGD".
         """
+
         super(SuffixSGD, self).__init__(use_locking, name)
         self._sigma = sigma
         self._lr_tensor = lr
