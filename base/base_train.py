@@ -2,12 +2,13 @@ import tensorflow as tf
 
 
 class BaseTrain:
-    def __init__(self, sess, model, data, config, logger):
+    def __init__(self, sess, model, optimizer, data, config, logger):
         self.model = model
         self.logger = logger
         self.config = config
         self.sess = sess
         self.data = data
+        self.optimizer = optimizer
         self.init = tf.group(tf.global_variables_initializer(), tf.local_variables_initializer())
         self.sess.run(self.init)
 
