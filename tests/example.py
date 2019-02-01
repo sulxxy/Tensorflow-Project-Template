@@ -9,7 +9,7 @@ from utils.logger import Logger
 from utils.utils import get_args
 
 
-def main():
+def run():
     # capture the config path from the run arguments
     # then process the json configuration file
     try:
@@ -37,7 +37,3 @@ def main():
     model.load(sess)
     # here you train your model
     trainer.train()
-
-
-if __name__ == '__main__':
-    main()
