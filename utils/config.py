@@ -1,6 +1,7 @@
 import json
-from bunch import Bunch
 import os
+
+from bunch import Bunch
 
 
 def get_config_from_json(json_file):
@@ -21,6 +22,6 @@ def get_config_from_json(json_file):
 
 def process_config(json_file):
     config, _ = get_config_from_json(json_file)
-    config.summary_dir = os.path.join("../experiments", config.exp_name, "summary/")
-    config.checkpoint_dir = os.path.join("../experiments", config.exp_name, "checkpoint/")
+    config.summary_dir = os.path.join("../experiments", config.test_name, "summary/")
+    config.checkpoint_dir = os.path.join("../experiments", config.test_name, "checkpoint/")
     return config
