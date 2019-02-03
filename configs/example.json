@@ -1,5 +1,10 @@
 {
-  "exp_name": "example",
+  "test_name": "suffix_test",
+  "dataset": "mnist",
+  "data_pre_processing_params": {
+    "resize_size": 10,
+    "mean": 0,
+  },
   "num_epochs": 10,
   "num_iter_per_epoch": 10,
   "learning_rate": 0.001,
